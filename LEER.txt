@@ -1,0 +1,45 @@
+============================================================
+  DEAD ISLAND 2 - GESTOR DE ARMAS Y ALIJO (GUI para di2save)
+============================================================
+
+REQUISITOS
+----------
+1. Dead Island 2 (Steam o Epic)
+2. di2save.exe de Steffen Langnes:
+   https://www.steffenl.com/projects/dead-island-2-save-editor/
+   Descárgalo y colócalo en la MISMA carpeta que este .bat
+
+INSTALACIÓN
+-----------
+1. Descarga di2save.exe y su carpeta "data" del enlace de arriba.
+2. Descomprime todo en una carpeta, por ejemplo: C:\DI2_Gestor\
+3. Copia DI2_Gestor_Armas.bat en esa misma carpeta (junto a di2save.exe).
+4. Doble clic en DI2_Gestor_Armas.bat.
+
+FUNCIONES
+---------
+- Ver inventario y armas con filtros y búsqueda
+- Añadir armas con rareza, nivel, copias y mejoras opcionales
+- Modificar múltiples armas a la vez (rareza, nivel, mejoras)
+- Aplicar TODAS las mejoras (~118) a múltiples armas de golpe
+- Ver todas las mejoras instaladas de varias armas
+- Eliminar múltiples armas o todas las de una categoría
+- Eliminar ítems del inventario (no solo armas)
+- Subir el nivel al máximo, elegir uno exacto o resetear
+- Munición máxima de todos los tipos (con fallback al alijo)
+- Dinero máximo
+- Desbloquear TODOS los blueprints y curveballs
+- Gestión completa del ALIJO (stash): ver, añadir, mover, clonar, modificar
+- Clonar ítems dentro del mismo contenedor o entre inventario y alijo
+- Aplicar mejoras a los clones, copiarlas del original o dejarlos sin mejoras
+- Cambiar de personaje en cualquier momento
+
+AVISO
+-----
+- CIERRA el juego antes de usar el script.
+
+CRÉDITOS
+--------
+- di2save.exe: Steffen André Langnes (steffenl)
+  https://www.steffenl.com/projects/dead-island-2-save-editor/
+- GUI y script .bat: [MTJuanlu]
