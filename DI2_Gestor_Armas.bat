@@ -500,12 +500,14 @@ function Show-Inv($list) {
     foreach ($it in $list) {
         $i++
         $d = if ($it.UI) { $it.UI } else { $it.Name }
-        $parts = @($it.Cat)
+        $parts = @()
+        if ($it.Name)   { $parts += "[$($it.Name)]" }
+        if ($it.Cat)    { $parts += $it.Cat }
         if ($it.Rarity) { $parts += $it.Rarity }
         if ($it.Level)  { $parts += "Nv $($it.Level)" }
         if ($it.Ups)    { $parts += "$($it.Ups) mejoras" }
         if ($it.Count)  { $parts += "x$($it.Count)" }
-        $parts += "ID $($it.ID)"
+        if ($it.ID)     { $parts += "ID $($it.ID)" }
         Say ("{0,3}. {1}" -f $i, $d) White
         Say ("       " + ($parts -join ' | ')) DarkGray
     }
@@ -534,6 +536,7 @@ function Show-Inv-Paged($list, [int]$pageSize = 100) {
             $d = if ($it.UI) { $it.UI } else { $it.Name }
 
             $parts = @()
+            if ($it.Name)   { $parts += "[$($it.Name)]" }
             if ($it.Cat)    { $parts += $it.Cat }
             if ($it.Rarity) { $parts += $it.Rarity }
             if ($it.Level)  { $parts += "Nv $($it.Level)" }
@@ -750,7 +753,7 @@ function Anadir-Arma {
 
     Say ''
     Say "Coincidencias: $($res.Count)" Cyan
-    Show-Inv-Paged $res 100
+    Show-Inv $res
     $chosen = @(Select-Multiple $res 'Numero(s) del item')
     if ($chosen.Count -eq 0) { Say 'Cancelado.' Yellow; return }
 
@@ -1314,7 +1317,7 @@ function Anadir-Arma-AlStash {
 
     Say ''
     Say "Coincidencias: $($res.Count)" Cyan
-    Show-Inv-Paged $res 100
+    Show-Inv $res
     $chosen = @(Select-Multiple $res 'Numero(s) del item')
     if ($chosen.Count -eq 0) { Say 'Cancelado.' Yellow; return }
 
@@ -1849,7 +1852,7 @@ function Ver-ItemsEspeciales {
 
     Say ''
     Say "Items encontrados: $($res.Count)" Cyan
-    Show-Inv-Paged $res 100
+    Show-Inv $res
     $chosen = @(Select-Multiple $res 'Items a procesar')
     if ($chosen.Count -eq 0) { return }
 
